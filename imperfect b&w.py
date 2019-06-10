@@ -11,10 +11,10 @@ x="obraz.jpg"
 
 def color(x):
     if wartosc.get()=="1":
-        img = Image.open(x).convert("L") #changes colors to black and white
+        img = PIL.Image.open(x).convert("L") #changes colors to black and white
         print(colored("Powrót do opcji edytowania\n","red"))
     elif wartosc.get()=="2":
-        img = Image.open(x) #changes colors to RGB
+        img = PIL.Image.open(x) #changes colors to RGB
         print(colored("Powrót do opcji edytowania\n","red"))
         img.show()
 
@@ -26,7 +26,7 @@ glowne_okno=Tk()
 glowne_okno.title("black&white")
 plotno=Canvas(glowne_okno, width=w, height=h)
 plotno.pack()
-obraz=Image.open("obraz.jpg")
+obraz=PIL.Image.open("obraz.jpg")
 obrazTk=ImageTk.PhotoImage(obraz)
 plotno.create_image(w/2,h/2, image=obrazTk)
 opis_pola_tekstowego= Label(glowne_okno, text= "Czy chcesz czarno-białe zdjęcie??")
